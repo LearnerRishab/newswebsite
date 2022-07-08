@@ -23,7 +23,7 @@ const AppProvider = ({ children }) => {
     //Whenever we use fetch it returns a promise and it is complicated using
     // Promise as need to include .then [2 times] so we use Async Await for the promise section in ES 6
     //
-    try {rm -rf .git
+    try {
       const res = await fetch(url); // we need to wait for getting
       //the data of that returned promise from network
       const data = await res.json();
@@ -72,7 +72,7 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     getNewsPosts(`${API}query=${state.query}&page=${state.page}`);
     //getNewsPosts(API);
-  }, [state.query,state.page]);
+  }, [state.query, state.page]);
 
   return (
     <AppContext.Provider
